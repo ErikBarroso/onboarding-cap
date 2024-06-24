@@ -1,0 +1,8 @@
+### 1-Explique o conceito de Modelos no desenvolvimento de aplicativos. Por que são importantes?
+São uma representação que contém as propriedades de uma determinada entidade. Um model da nossa entidade.
+
+### 2- Descreva o papel dos Serviços em um aplicativo e como eles interagem com os Modelos.
+São responsável por oferecer opções de manipulações das entidades, através dos métodos HTTP.
+
+### 3- O que é a CDS Query Language (CQL) e como ela se diferencia do SQL tradicional?
+CQL é uma forma de realizarmos operações de consulta no banco de dados. Ela se diferencia do SQL, por ter uma sintaxe mais fácil, e não necessita de escrever SQL puro.
