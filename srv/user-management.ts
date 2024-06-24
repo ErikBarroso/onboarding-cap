@@ -10,6 +10,7 @@ export class UserManagementService extends cds.ApplicationService {
   async beforeReadUsers(request: Request): Promise<void> {
     const users = await cds
     .read('Users')
+    .columns('email','username', 'firstName', 'lastName')
     .where({ email: 'teste@b2rise.com' })
     .orderBy('firstName', 'email')
     console.log(users);
