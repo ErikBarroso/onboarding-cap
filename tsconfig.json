@@ -1,0 +1,26 @@
+{
+    "compilerOptions": {
+        "target": "ES2022", // versão do ECMA 
+        "lib": ["ES2022"],
+        "experimentalDecorators": true, // necessário para utilizar a biblioteca module-alias
+        "emitDecoratorMetadata": true, // necessário para utilizar a biblioteca module-alias
+        "module": "commonjs",
+        "baseUrl": "./",
+        "rootDir": "./",
+        "outDir": "../gen/srv/srv",
+        "skipLibCheck": true, // pula a verificação de arquivos .d.ts
+        "esModuleInterop": true, // emite código JS adicional para facilitar o suporte à importação de módulos CommonJS. Além de permitir o uso de import default de maneira simplificada. Ver mais em https://www.typescriptlang.org/tsconfig#esModuleInterop
+        "noImplicitAny": true, // proíbe o uso de tipos any
+        "paths": {
+            "@/*": ["srv/*"],
+            "@tests/*": ["tests/*"]
+        }
+    },
+    "include": [
+        "srv",
+        "tests"
+    ],
+    "exclude": [
+        "node_modules"
+    ]
+}

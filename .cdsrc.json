@@ -1,0 +1,27 @@
+{
+    "[development]": {
+        "requires": {
+            "db": {
+                "kind": "sqlite",
+                "credentials": {
+                    "database": "sqlite.db"
+                }
+            },
+            "auth": {
+                "kind": "basic-auth",
+                "users": {
+                    "dummy": {
+                        "password": "dummy",
+                        "roles": [
+                            "ROLE_DUMMY_ADMIN"
+                        ],
+                        "userAttributes": {
+                            "email": ["dummy@dummy.com"],
+                            "Groups": ["DUMMY_GROUPS"]
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
