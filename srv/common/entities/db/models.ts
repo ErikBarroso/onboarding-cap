@@ -1,4 +1,17 @@
 export namespace db.models {
+    export interface Departments extends Managed {
+        id: string;
+        departmentName: string;
+        supplierId?: Supplier;
+        supplierId_id?: string;
+    }
+
+    export interface Employees extends Managed {
+        id: string;
+        name: string;
+        email: string;
+    }
+
     export interface Product extends Managed {
         id: string;
         name: string;
@@ -36,6 +49,8 @@ export namespace db.models {
     }
 
     export enum Entity {
+        Departments = "db.models.Departments",
+        Employees = "db.models.Employees",
         Product = "db.models.Product",
         PurchaseOrderHeaders = "db.models.PurchaseOrderHeaders",
         PurchaseOrderItems = "db.models.PurchaseOrderItems",
@@ -43,6 +58,8 @@ export namespace db.models {
     }
 
     export enum SanitizedEntity {
+        Departments = "Departments",
+        Employees = "Employees",
         Product = "Product",
         PurchaseOrderHeaders = "PurchaseOrderHeaders",
         PurchaseOrderItems = "PurchaseOrderItems",
@@ -81,6 +98,39 @@ export namespace sap.common {
         Countries = "Countries",
         Currencies = "Currencies",
         Languages = "Languages"
+    }
+}
+
+export namespace EmployeeManagementService {
+    export interface Departments {
+        createdAt?: Date;
+        createdBy?: string;
+        modifiedAt?: Date;
+        modifiedBy?: string;
+        id: string;
+        departmentName: string;
+        supplierId?: db.models.Supplier;
+        supplierId_id?: string;
+    }
+
+    export interface Employees {
+        createdAt?: Date;
+        createdBy?: string;
+        modifiedAt?: Date;
+        modifiedBy?: string;
+        id: string;
+        name: string;
+        email: string;
+    }
+
+    export enum Entity {
+        Departments = "EmployeeManagementService.Departments",
+        Employees = "EmployeeManagementService.Employees"
+    }
+
+    export enum SanitizedEntity {
+        Departments = "Departments",
+        Employees = "Employees"
     }
 }
 
