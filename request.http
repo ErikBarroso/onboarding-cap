@@ -1,15 +1,18 @@
 ### 
-GET http://localhost:4004/odata/v4/purchase-order-management/PurchaseOrderHeaders
+GET http://localhost:4004/odata/v4/employee-management/Employees
 
 ###
-POST http://localhost:4004/odata/v4/purchase-order-management/PurchaseOrderHeaders
+POST http://localhost:4004/odata/v4/employee-management/Employees
 content-type: application/json
 
 {
-	"company": "E22",
-	"purchasingOrganization": "MYPO",
-	"purchasingGroup": "MYP"
+	"name": "Erik",
+	"email": "teste@yahoo.com"
 }
 
 ### 
 GET http://localhost:4004/odata/v4/purchase-order-management/PurchaseOrderHeaders?$expand=items&$filter=id eq 6cbad6e9-01c5-4bb4-98ba-3d21bcc2a9d9
+
+###
+GET http://localhost:4004/odata/v4/purchase-order-management/PurchaseOrderItems
+Authorization: Basic dummy:dummy
