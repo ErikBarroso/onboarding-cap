@@ -1,7 +1,7 @@
 import '../configuration/module-alias';
 import { db } from "@/common/entities/db/models";
-import { service } from '@sap/cds';
 import {  Service, Request } from "@sap/cds/apis/services";
+import cds from '@sap/cds';
 
 //alterando o comportamento de leitura: alterando texto do cabeçalho
 
@@ -10,7 +10,13 @@ export default (service: Service) => {
     results.forEach(poHeader => poHeader.company = 'XXXXXXXXXXX' )
   })
 
-  service.before('CREATE','PurchaseOrderHeaders', (request: Request) => {
+  service.before('CREATE','PurchaseOrderHeaders', async (request: Request) => {
+    const swapi = await cds.connect.to('swapi');
+    const person = await swapi.send({
+        method: 'GET',
+        path: 'people/1',
+        headers: { 'Content-Type': 'application/json' },
+    });
     const items = [
       {
         material: 'Teste_erik',
@@ -28,6 +34,8 @@ export default (service: Service) => {
       }
     ]
     request.data.items = items
+    request.data.createdBy = person.name;
+    request.data.modifiedBy = person.name;
   })
 }
 

@@ -21,6 +21,12 @@
                         }
                     }
                 }
+            },
+            "swapi": {
+                "kind": "rest",
+                "credentials": {
+                    "url": "https://swapi.dev/api"
+                }
             }
         }
     }

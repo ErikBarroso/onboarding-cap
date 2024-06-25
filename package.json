@@ -6,6 +6,8 @@
   "license": "UNLICENSED",
   "private": true,
   "dependencies": {
+    "@sap-cloud-sdk/http-client": "^3.15.0",
+    "@sap-cloud-sdk/resilience": "^3.15.0",
     "@sap/cds": "^7",
     "@sweet-monads/either": "3.3.1",
     "express": "^4",
