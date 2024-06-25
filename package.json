@@ -29,7 +29,8 @@
   },
   "scripts": {
     "start": "cds-serve",
-    "dev": "NODE_ENV=LOCAL cds-ts serve all --with-mocks --watch",
-    "seed": "cds deploy -2 sqlite:sqlite.db --with-mocks --no-save"
+    "dev": "NODE_ENV=LOCAL cds-ts serve --from ./srv/main/routes --with-mocks --watch",
+    "seed": "cds deploy ./srv/main/routes -2 sqlite:sqlite.db --with-mocks --no-save",
+    "build:cds": "cds2types -c ./srv/main/routes -o ./srv/common/entities/db/models.ts -d"
   }
 }
