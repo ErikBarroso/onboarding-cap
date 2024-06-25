@@ -1,0 +1,17 @@
+### 1-Explique a diferença entre autenticação e autorização no contexto do SAP CAP.
+  Autenticação é se o usuário está logado, para podermos identifica-ló.
+  Autorização são as permissões que esse user tem dentro da nossa aplicação.
+
+### 2- Descreva o papel do arquivo .cdsrc.json na configuração de segurança de um aplicativo CAP.
+  É onde nós configuramos as roles para poder dar autorização aos usuários.
+
+### 3- O que significa uma role no contexto de segurança de um aplicativo? Dê um exemplo.
+  Role seria onde conseguimos permitir o acesso a determinados tipos de usuários em partes específicas da nossa aplicação.
+  EX: Somentes ADM pode deletar algum registro no banco.
+
+### 4- Explique como a anotação @requires funciona para restringir o acesso em um serviço no SAP CAP.
+  Nela, conseguimos passar as roles que teram acesso em determinado serviço.
+
+### 5- Qual é o propósito da anotação @restrict e como ela difere de @requires?
+  Restrict me permite personalizar quais recursos eu quero disponibilizar para determinada role.
+  Acredito que a requires, acaba liberando todos os recursos para a role que configurarmos, e a restrict me permite personalizar quais recursos quero disponibilizar.
