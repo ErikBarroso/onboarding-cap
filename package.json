@@ -33,6 +33,11 @@
     "start": "cds-serve",
     "dev": "NODE_ENV=LOCAL cds-ts serve --from ./srv/main/routes --with-mocks --watch",
     "seed": "cds deploy ./srv/main/routes -2 sqlite:sqlite.db --with-mocks --no-save",
-    "build:cds": "cds2types -c ./srv/main/routes -o ./srv/common/entities/db/models.ts -d"
-  }
+    "build:cds": "cds2types -c ./srv/main/routes -o ./srv/common/entities/db/models.ts -d",
+    "watch-project1": "cds watch --open project1/webapp/index.html?sap-ui-xx-viewCache=false"
+  },
+  "sapux": [
+    "app/project1",
+    "app/project1"
+  ]
 }
