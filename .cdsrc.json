@@ -19,6 +19,16 @@
                             "email": ["dummy@dummy.com"],
                             "Groups": ["DUMMY_GROUPS"]
                         }
+                    },
+                       "erik": {
+                        "password": "erik",
+                        "roles": [
+                            "ROLE_HR_ADMIN"
+                        ],
+                        "userAttributes": {
+                            "email": ["erik@erik.com"],
+                            "Groups": ["DUMMY_GROUPS"]
+                        }
                     }
                 }
             },

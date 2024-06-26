@@ -17,6 +17,9 @@ export default (service: Service) => {
   })
 
   service.after('READ', 'Employees', (results: db.models.Employees[], request: Request) => {
+    if(!request.user.is('ROLE_HR_ADMIN')) {
+      return request.reject(403, "Não autorizado")
+    }
      results.forEach(poHeader => poHeader.email = poHeader.email.split('@')[1])
   })
 }

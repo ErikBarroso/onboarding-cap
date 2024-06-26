@@ -1,18 +1,45 @@
 ### 
 GET http://localhost:4004/odata/v4/employee-management/Employees
+Authorization: Basic erik:erik
 
 ###
 POST http://localhost:4004/odata/v4/employee-management/Employees
 content-type: application/json
+Authorization: Basic erik:erik
 
 {
-	"name": "Erik",
-	"email": "teste@yahoo.com"
+	"name": "EBS",
+	"email": "asdasd@gmail.com"
+}
+
+###
+POST http://localhost:4004/odata/v4/employee-management-admin/Employees
+content-type: application/json
+Authorization: Basic erik:erik
+
+{
+	"name": "~~~",
+	"email": "asdasd@gmail.com"
 }
 
 ### 
 GET http://localhost:4004/odata/v4/purchase-order-management/PurchaseOrderHeaders?$expand=items&$filter=id eq 6cbad6e9-01c5-4bb4-98ba-3d21bcc2a9d9
 
 ###
-GET http://localhost:4004/odata/v4/purchase-order-management/PurchaseOrderItems
+GET http://localhost:4004/odata/v4/purchase-order-management/PurchaseOrderHeaders
 Authorization: Basic dummy:dummy
+
+###
+GET http://localhost:4004/odata/v4/purchase-order-management-admin/PurchaseOrderHeaders
+Authorization: Basic dummy:dummy
+
+###
+POST http://localhost:4004/odata/v4/purchase-order-management-admin/PurchaseOrderHeaders
+content-type: application/json
+Authorization: Basic dummy:dummy
+
+{
+	"company": "EBS",
+	"purchasingOrganization": "000",
+	"purchasingGroup": "333"
+}
