@@ -1,4 +1,5 @@
-using PurchaseOrderManagementService as service from '../../srv/purchase-order-management';
+using PurchaseOrderManagementService as service from '../../../srv/main/routes/purchase-order-management';
+
 
 annotate service.PurchaseOrderHeaders with @(
   UI.FieldGroup #GeneratedGroup: {
@@ -77,11 +78,11 @@ annotate service.PurchaseOrderHeaders with @(
     purchasingGroup,
   ],
 ) {
-  company @(
+  company                @(
     title: 'company',
     mandatory,
   );
-  purchasingOrganization  @(
+  purchasingOrganization @(
     title : 'purchasingOrganization',
     mandatory,
     assert: {range: [
@@ -89,7 +90,7 @@ annotate service.PurchaseOrderHeaders with @(
       100
     ], }
   );
-  purchasingGroup      @(
+  purchasingGroup        @(
     title: 'purchasingGroup',
     mandatory,
   );
